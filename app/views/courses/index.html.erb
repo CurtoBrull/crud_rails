@@ -1,9 +1,11 @@
+<%= link_to "Home", "/courses/"%>
+<%= link_to "New", "/courses/new"%>
 <h1>Índice de Cursos</h1>
 
 <ul>
   <% @courses.each do |course| %>
     <li>
-      <%= course.title %>
+      <%= link_to course.title, show_course_path(id: course.id) %>
     </li>
   <% end %>
 </ul>
